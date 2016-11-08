@@ -14,11 +14,6 @@ function Disable-Proxy {
 	    Disable-Proxy
 		
     #>
-	[OutputType([String])]
-    [CmdletBinding(
-        SupportsShouldProcess=$true,
-		ConfirmImpact="High"
-    )]
     Begin{
 		$formats = @{
 			"Begin" = "Begin {0}...";
