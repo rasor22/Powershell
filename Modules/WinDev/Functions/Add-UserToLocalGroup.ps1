@@ -53,7 +53,8 @@ function Add-UserToLocalGroup {
     } Process {
     	Write-Verbose -Message ($formats.Process -f $MyInvocation.MyCommand);
 		if($pscmdlet.ShouldProcess("$GroupName : $DomainName \ $UserName")) {
-			$localGroup.psbase.Invoke("Add",([ADSI]"WinNT://$DomainName/$UserName").path)
+			#$localGroup.psbase.Invoke("Add",([ADSI]"WinNT://$DomainName/$UserName").path)
+			$localGroup.Add("WinNT://$DomainName/$UserName")
 		}
     } End {	
     	Write-Verbose -Message ($formats.End -f $MyInvocation.MyCommand);
